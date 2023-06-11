@@ -42,13 +42,21 @@ function App() {
     console.log('Our add Todo btn has been clicked')
   }
 
+  const deleteTodo = (deleteTodoRowNumber) => {
+    let filtered = todos.filter(function (value) {
+      return value.rowNumber !== deleteTodoRowNumber;
+    });
+
+    setTodos(filtered);
+  }
+
   return (
     <div className="mt-5 container">
       <div className="card">
         <div className="card-header">Your Todos</div>
         <div className="card-body">
-          <TodoTable todos={todos} />
-          <button className='btn btn-primary' onClick={addTodo}>
+          <TodoTable todos={todos} deleteTodo={deleteTodo} />
+          <button className='btn btn-primary' >
             Add new todo
           </button>
           <NewTodoForm addTodo={addTodo} />
