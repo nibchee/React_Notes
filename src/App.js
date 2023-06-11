@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import TodoTable from './components/ToDoTable';
+import NewTodoForm from './components/NewTodoForm';
 
 function App() {
   //array of objects
@@ -45,6 +46,7 @@ function App() {
           <button className='btn btn-primary' onClick={addTodo}>
             Add new todo
           </button>
+          <NewTodoForm />
         </div>
       </div>
     </div>
