@@ -21,12 +21,12 @@ function App() {
       { rowNumber: 4, rowDescription: 'Charge Phone Battery', rowAssigned: 'User Four' }
     ]
   )
-  const addTodo = () => {
+  const addTodo = (description, assigned) => {
     if (todos.length > 0) {
       const newTodo = {
         rowNumber: todos.length + 1,
-        rowDescription: 'New Todo',
-        rowAssigned: 'user Three'
+        rowDescription: description,
+        rowAssigned: assigned
       }
       //here istaed pushing we are destructing using setTodod function
       //  todos.push(newTodo);
@@ -46,7 +46,7 @@ function App() {
           <button className='btn btn-primary' onClick={addTodo}>
             Add new todo
           </button>
-          <NewTodoForm />
+          <NewTodoForm addTodo={addTodo} />
         </div>
       </div>
     </div>
