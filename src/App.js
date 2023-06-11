@@ -17,6 +17,7 @@ function App() {
             </thead>
             <tbody>
               <ToDoRowItem/>
+              <ToDoRowItem/>
               <tr>
                 <th scope="row">2</th>
                 <td>get Haircut</td>
