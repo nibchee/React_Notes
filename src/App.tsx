@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './App.css';
-import TodoTable from './components/ToDoTable';
-import NewTodoForm from './components/NewTodoForm';
+import {TodoTable} from './components/ToDoTable';
+import {NewTodoForm} from './components/NewTodoForm';
 
-function App() {
+export const App=()=>{
   const [showAddTodoForm,setShowAddTodoForm]=useState(false);
   //array of objects
   // const todos = [
@@ -22,7 +22,7 @@ function App() {
       { rowNumber: 4, rowDescription: 'Charge Phone Battery', rowAssigned: 'User Four' }
     ]
   )
-  const addTodo = (description, assigned) => {
+  const addTodo = (description:string, assigned:string) => {
     let rowNumber = 0;
 
     if (todos.length > 0) {
@@ -43,7 +43,7 @@ function App() {
     console.log('Our add Todo btn has been clicked')
   }
 
-  const deleteTodo = (deleteTodoRowNumber) => {
+  const deleteTodo = (deleteTodoRowNumber:number) => {
     let filtered = todos.filter(function (value) {
       return value.rowNumber !== deleteTodoRowNumber;
     });
@@ -70,4 +70,3 @@ function App() {
   );
 }
 
-export default App;
